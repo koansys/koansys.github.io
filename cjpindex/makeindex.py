@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from __future__ import with_statement
 
 # Directories to examine for indexes.
