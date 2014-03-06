@@ -4,7 +4,7 @@ from __future__ import with_statement
 
 # Directories to examine for indexes.
 # This really should be deduced -- look for folderish things?
-DIRS = (("1.1", "production"),)
+DIRS = (("1.2", "production"),)
 
 import os
 import setuptools
@@ -169,14 +169,14 @@ def main():
         if os.path.exists('index.html'):
             os.remove('index.html')
         mkindex()
-        with open('index.html', 'w') as f: 
+        with open('index.html', 'w') as f:
             print >>f, '<html><head><title>%s/%s</title></head>' % index
             print >>f, '<body>'
             for fn in sorted(os.listdir(path)):
                 if fn.startswith('.') or fn in ('index', 'index.html'):
                     continue
                 print >>f, '<a href="%s">%s</a><br/>' % (fn, fn)
-            print >>f, '</body></html>' 
-            
+            print >>f, '</body></html>'
+
 if __name__ == '__main__':
     main()
